@@ -1,0 +1,37 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+
+# Server
+source:           docs
+destination:      _gh_pages
+host:             0.0.0.0
+port:             4000
+url:              http://getbootstrap.com
+encoding:         UTF-8
+
+# Custom vars
+current_version:  1.0.0
+repo:             https://github.com/supwisdom/bootstrap-treefy
+
+download:
+  source:         https://github.com/twbs/bootstrap/archive/v3.3.4.zip
+  dist:           https://github.com/twbs/bootstrap/releases/download/v3.3.4/bootstrap-3.3.4-dist.zip
+  sass:           https://github.com/twbs/bootstrap-sass/archive/v3.3.4.tar.gz
+
+blog:             http://blog.getbootstrap.com
+expo:             http://expo.getbootstrap.com
+
+cdn:
+
+  jquery:         http://code.jquery.com/jquery-1.11.3.min.js
+  bootstrap_css:  https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css
+  bootstrap_js:   https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js
+  html5shiv:      https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js
+  respond:        https://oss.maxcdn.com/respond/1.4.2/respond.min.js
+  fontawesome:    http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css
+  bootstrap_select_css: http://silviomoreto.github.io/bootstrap-select/bootstrap-select.min.css
+  bootstrap_select_js:  http://silviomoreto.github.io/bootstrap-select/bootstrap-select.min.js

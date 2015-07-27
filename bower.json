@@ -1,0 +1,38 @@
+{
+  "name": "bootstrap-treefy",
+  "version": "1.0.0",
+  "homepage": "https://github.com/supwisdom/bootstrap-treefy",
+  "authors": [
+    "Ke Sun <tdxt6409fch@163.com>"
+  ],
+  "description": "Bootstrap Tree Table",
+  "keywords": [
+    "bootstrap",
+    "table",
+    "treefy"
+  ],
+  "license": "MIT",
+  "moduleType": "globals",
+  "main": [
+    "src/less/bootstrap-treefy.less",
+    "dist/bootstrap-treefy.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "*.iml",
+    "src",
+    "package.json",
+    "docs",
+    "_config.yml",
+    "Gruntfile.js",
+    "grunt"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.1",
+    "bootstrap": "~3.3.4",
+    "fontawesome": "~4.3.0"
+  }
+}

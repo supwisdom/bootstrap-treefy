@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>{{ page.title }}</title>
+
+  <link href="{{ page.basePath }}/assets/css/pygments-manni.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ site.cdn.bootstrap_css }}">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="{{ site.cdn.html5shiv }}"></script>
+  <script src="{{ site.cdn.respond }}"></script>
+  <![endif]-->
+
+  <script src="{{ site.cdn.jquery }}"></script>
+  <script src="{{ site.cdn.bootstrap_js }}"></script>
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="{{ site.cdn.fontawesome }}">
+
+  <!-- bootstrap-select -->
+  <link rel="stylesheet" href="{{ site.cdn.bootstrap_select_css }}">
+  <script src="{{ site.cdn.bootstrap_select_js }}"></script>
+
+  <!-- bootstrap-treefy -->
+  <link rel="stylesheet" href="{{ page.basePath }}/dist/css/bootstrap-treefy.css">
+  <script src="{{ page.basePath }}/dist/bootstrap-treefy.js"></script>
+  <style>
+    body {
+      padding-top: 70px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <a href="{{ page.basePath }}/" class="navbar-brand">Bootstrap Treefy</a>
+    </div>
+
+    <div>
+
+      <ul class="nav navbar-nav">
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            Examples <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="{{ page.basePath }}/examples/multi-tree">Multi-level tree</a>
+            </li>
+            <li>
+              <a href="{{ page.basePath }}/examples/specify-expander-icon">specify expander icon</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            Documentation <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="{{ page.basePath }}/options">Options</a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
+
+{{ content }}
+
+</body>
+
+</html>
+
