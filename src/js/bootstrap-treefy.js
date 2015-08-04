@@ -1,16 +1,6 @@
 +function ($) {
     'use strict';
 
-    /* 得到第一个不是checkbox的td元素*/
-    var getElement = function(element, columnIndex) {
-        var td = element.find('td').get(columnIndex);
-        if ($(td).find(':checkbox').length != 0) {
-            columnIndex ++;
-            return getElement(element, columnIndex);
-        }
-        return td;
-    }
-
     var Node = function (row) {
         var template = /treetable-([A-Za-z0-9_-]+)/;
         var parentTemplate = /treetable-parent-([A-Za-z0-9_-]+)/;
@@ -54,7 +44,7 @@
 
     Node.prototype.initExpander = function(treeFy) {
         var self = this;
-        var element = getElement(self.row, treeFy.options.treeColumn);
+        var element = self.row.find('td').get(treeFy.options.treeColumn);
         var $expander = self.row.find('.treetable-expander');
         if ($expander) {
             $expander.remove();

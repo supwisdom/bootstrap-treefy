@@ -14,7 +14,7 @@ url:              http://getbootstrap.com
 encoding:         UTF-8
 
 # Custom vars
-current_version:  1.0.0
+current_version:  1.0.1
 repo:             https://github.com/supwisdom/bootstrap-treefy
 
 download:
