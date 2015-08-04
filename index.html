@@ -113,12 +113,12 @@
       <p>Source, dist, and docs.</p>
 
       <p>
-        <a href="https://github.com/supwisdom/bootstrap-treefy/archive/master.zip" class="btn btn-lg btn-default" role="button">Download source (v.1.0.0)</a>
+        <a href="https://github.com/supwisdom/bootstrap-treefy/archive/master.zip" class="btn btn-lg btn-default" role="button">Download source (v.1.0.1)</a>
       </p>
 
       <h2>Clone or fork via GitHub</h2>
       <p>
-        <a href="https://github.com/supwisdom/bootstrap-treefy" class="btn btn-lg btn-default" role="button">Via Github (v.1.0.0)</a>
+        <a href="https://github.com/supwisdom/bootstrap-treefy" class="btn btn-lg btn-default" role="button">Via Github (v.1.0.1)</a>
       </p>
 
       <h2>Install with Bower</h2>
@@ -155,7 +155,9 @@
 
 <script>
     $(function() {
-        $("#table").treeFy();
+        $("#table").treeFy({
+            treeColumn: 1
+        });
     });
 </script>
 
@@ -187,7 +189,9 @@
 
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s2">"#table"</span><span class="p">).</span><span class="nx">treeFy</span><span class="p">();</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#table"</span><span class="p">).</span><span class="nx">treeFy</span><span class="p">({</span>
+            <span class="na">treeColumn</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">});</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
 

@@ -89,7 +89,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <h2>Multi Tree Table</h2>
+            <h2>Specify Expander Icon</h2>
         </div>
     </div>
 
@@ -126,7 +126,8 @@
     $(function() {
         $("#table").treeFy({
             expanderExpandedClass: 'fa fa-minus',
-            expanderCollapsedClass: 'fa fa-plus'
+            expanderCollapsedClass: 'fa fa-plus',
+            treeColumn: 1
         });
     });
 </script>
@@ -161,7 +162,8 @@
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">$</span><span class="p">(</span><span class="s2">"#table"</span><span class="p">).</span><span class="nx">treeFy</span><span class="p">({</span>
             <span class="na">expanderExpandedClass</span><span class="p">:</span> <span class="s1">'fa fa-minus'</span><span class="p">,</span>
-            <span class="na">expanderCollapsedClass</span><span class="p">:</span> <span class="s1">'fa fa-plus'</span>
+            <span class="na">expanderCollapsedClass</span><span class="p">:</span> <span class="s1">'fa fa-plus'</span><span class="p">,</span>
+            <span class="na">treeColumn</span><span class="p">:</span> <span class="mi">1</span>
         <span class="p">});</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>

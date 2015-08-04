@@ -128,7 +128,9 @@
 
 <script>
     $(function() {
-        $("#table").treeFy();
+        $("#table").treeFy({
+            treeColumn: 1
+        });
     });
 </script>
 
@@ -164,7 +166,9 @@
 
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s2">"#table"</span><span class="p">).</span><span class="nx">treeFy</span><span class="p">();</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#table"</span><span class="p">).</span><span class="nx">treeFy</span><span class="p">({</span>
+            <span class="na">treeColumn</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">});</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
 
