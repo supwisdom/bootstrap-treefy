@@ -163,7 +163,11 @@
         $.each(allNodes, function() {
             var noChildren = this.children.length === 0;
             if (!noChildren) {
-                this.row.addClass(self.options.initStatusClass);
+                if (self.options.initState == 0) {
+                    this.row.addClass('treetable-expanded');
+                } else if (self.options.initState == 1){
+                    this.row.addClass('treetable-collapsed');
+                }
             }
             if (!this.parentId) {
                 rootNodes.push(this);
@@ -259,7 +263,7 @@
 
         treeColumn: 0,
 
-        initStatusClass: 'treetable-expanded'
+        initState: 1
     }
 
 
