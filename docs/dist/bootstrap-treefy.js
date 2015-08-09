@@ -163,7 +163,11 @@
         $.each(allNodes, function() {
             var noChildren = this.children.length === 0;
             if (!noChildren) {
-                this.row.addClass(self.options.initStatusClass);
+                if (self.options.initState === 'expanded') {
+                    this.row.addClass('treetable-expanded');
+                } else if (self.options.initState === 'collapsed'){
+                    this.row.addClass('treetable-collapsed');
+                }
             }
             if (!this.parentId) {
                 rootNodes.push(this);
@@ -191,12 +195,22 @@
 
     TreeFy.prototype.render = function(nodes) {
         var self = this;
+        var collapseCallback = self.options.collapseAnimateCallback;
+        var expandCallback = self.options.expandAnimateCallback;
         $.each(nodes, function(node) {
             //若父节点折叠, 隐藏子节点
             if (this.isCollapsed(self.$table)) {
-                this.row.hide();
+                if (collapseCallback) {
+                    collapseCallback(this.row);
+                } else {
+                    this.row.hide();
+                }
             } else {
-                this.row.show();
+                if (expandCallback) {
+                    expandCallback(this.row);
+                } else {
+                    this.row.show();
+                }
             }
             if (!this.isLeaf()) {
                 this.renderExpand(self);
@@ -259,7 +273,15 @@
 
         treeColumn: 0,
 
-        initStatusClass: 'treetable-expanded'
+        initState: 'expanded',
+
+        collapseAnimateCallback: function(row) {
+            row.hide();
+        },
+
+        expandAnimateCallback: function(row) {
+            row.show();
+        }
     }
 
 
