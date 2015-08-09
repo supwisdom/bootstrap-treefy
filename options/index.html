@@ -63,6 +63,9 @@
             <li>
               <a href="../examples/specify-expander-icon">specify expander icon</a>
             </li>
+            <li>
+              <a href="../examples/animate">Animation</a>
+            </li>
           </ul>
         </li>
 
@@ -142,12 +145,27 @@
 
         <tr>
           <td>initState</td>
-          <td>number</td>
-          <td><code>0</code></td>
-          <td>Initial state of tree <br/>
-            0 - all nodes will be expanded <br/>
-            1 - all nodes will be collapsed</td>
+          <td>String</td>
+          <td><code>'expanded'</code></td>
+          <td>Initial state of tree<br>
+            'expanded' - all nodes will be expanded<br>
+            'collapsed' - all nodes will be collapsed</td>
         </tr>
+
+        <tr>
+          <td>collapseAnimateCallback</td>
+          <td>function</td>
+          <td><code>function(row){row.hide();}</code></td>
+          <td>create custom animations, triggered when collapsing</td>
+        </tr>
+
+        <tr>
+          <td>expandAnimateCallback</td>
+          <td>function</td>
+          <td><code>function(row){row.show();}</code></td>
+          <td>create custom animations, triggered when expanding</td>
+        </tr>
+        
       </table>
 
     </div>

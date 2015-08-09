@@ -92,7 +92,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <h2>Multi Tree Table</h2>
+            <h2>Animation</h2>
         </div>
     </div>
 
@@ -118,11 +118,7 @@
         <td><input type="checkbox" name="row.id"/></td>
         <td>Node</td><td>1-2</td><td>c</td><td>info</td>
     </tr>
-    <tr data-node="treetable-4" data-pnode="treetable-parent-3">
-        <td><input type="checkbox" name="row.id"/></td>
-        <td>Node</td><td>1-2-1</td><td>c</td><td>info</td>
-    </tr>
-    <tr data-node="treetable-5">
+    <tr data-node="treetable-4">
         <td><input type="checkbox" name="row.id"/></td>
         <td>Node</td><td>2</td><td>c</td><td>info</td>
     </tr>
@@ -132,7 +128,13 @@
 <script>
     $(function() {
         $("#table").treeFy({
-            treeColumn: 1
+            treeColumn: 1,
+            collapseAnimateCallback: function(row) {
+                row.fadeOut();
+            },
+            expandAnimateCallback: function(row) {
+                row.fadeIn();
+            }
         });
     });
 </script>
@@ -156,11 +158,7 @@
         <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"row.id"</span><span class="nt">/&gt;&lt;/td&gt;</span>
         <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>1-2<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-4"</span> <span class="na">data-pnode=</span><span class="s">"treetable-parent-3"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"row.id"</span><span class="nt">/&gt;&lt;/td&gt;</span>
-        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>1-2-1<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
-    <span class="nt">&lt;/tr&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-5"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-4"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"row.id"</span><span class="nt">/&gt;&lt;/td&gt;</span>
         <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
@@ -170,7 +168,13 @@
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">$</span><span class="p">(</span><span class="s2">"#table"</span><span class="p">).</span><span class="nx">treeFy</span><span class="p">({</span>
-            <span class="na">treeColumn</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="na">treeColumn</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="na">collapseAnimateCallback</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">row</span><span class="p">.</span><span class="nx">fadeOut</span><span class="p">();</span>
+            <span class="p">},</span>
+            <span class="na">expandAnimateCallback</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">row</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">();</span>
+            <span class="p">}</span>
         <span class="p">});</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
