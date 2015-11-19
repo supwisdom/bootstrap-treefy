@@ -2,17 +2,17 @@
     'use strict';
 
     var Node = function (row) {
-        var template = /treetable-([A-Za-z0-9_-]+)/;
-        var parentTemplate = /treetable-parent-([A-Za-z0-9_-]+)/;
+        var template = /treetable-/;
+        var parentTemplate = /treetable-parent-/;
         this.row = row;
         this.id = null;
         if (template.test(this.row.attr('data-node'))) {
-            this.id = template.exec(this.row.attr('data-node'))[1];
+            this.id = this.row.attr('data-node').substring(this.row.attr('data-node').lastIndexOf('-')+1);
         }
 
         this.parentId = null;
         if (parentTemplate.test(this.row.attr('data-pnode'))) {
-            this.parentId = parentTemplate.exec(this.row.attr('data-pnode'))[1];
+            this.parentId = this.row.attr('data-pnode').substring(this.row.attr('data-pnode').lastIndexOf('-')+1);
         }
         this.children = [];
         this.status = true;
@@ -24,9 +24,9 @@
         var templateData = "treetable-parent-" + self.id;
         var $children = treeContainer.find('[data-pnode="' + templateData + '"]');
         if ($children.length != 0) {
-            $.each($children, function(index, child) {
+            $.each($children, function(i, child) {
                 var childNode = new Node($(child));
-                self.children.push(childNode)
+                self.children.splice(0, 0, childNode);
                 childNode.addChildren(treeContainer);
             });
         }
@@ -144,7 +144,7 @@
         var self = this;
         var result = $.grep(self.$table.find('tr'), function(trElement) {
             var nodeData = $(trElement).attr('data-node');
-            var template = /treetable-([A-Za-z0-9_-]+)/;
+            var template = /treetable-/;
             return template.test(nodeData);
         });
         var $allNodes = $(result);
@@ -163,11 +163,7 @@
         $.each(allNodes, function() {
             var noChildren = this.children.length === 0;
             if (!noChildren) {
-                if (self.options.initState === 'expanded') {
-                    this.row.addClass('treetable-expanded');
-                } else if (self.options.initState === 'collapsed'){
-                    this.row.addClass('treetable-collapsed');
-                }
+                this.row.addClass(self.options.initStatusClass);
             }
             if (!this.parentId) {
                 rootNodes.push(this);
@@ -180,6 +176,10 @@
     TreeFy.prototype.initNode = function(nodes) {
         var self = this;
         $.each(nodes, function() {
+            var rootNode = this.row;
+            $.each(this.children, function() {
+                rootNode.after(this.row);
+            });
             self.initNode(this.children);
             this.initExpander(self);
             this.initIndent(self);
@@ -195,22 +195,12 @@
 
     TreeFy.prototype.render = function(nodes) {
         var self = this;
-        var collapseCallback = self.options.collapseAnimateCallback;
-        var expandCallback = self.options.expandAnimateCallback;
         $.each(nodes, function(node) {
             //若父节点折叠, 隐藏子节点
             if (this.isCollapsed(self.$table)) {
-                if (collapseCallback) {
-                    collapseCallback(this.row);
-                } else {
-                    this.row.hide();
-                }
+                this.row.hide();
             } else {
-                if (expandCallback) {
-                    expandCallback(this.row);
-                } else {
-                    this.row.show();
-                }
+                this.row.show();
             }
             if (!this.isLeaf()) {
                 this.renderExpand(self);
@@ -273,15 +263,7 @@
 
         treeColumn: 0,
 
-        initState: 'expanded',
-
-        collapseAnimateCallback: function(row) {
-            row.hide();
-        },
-
-        expandAnimateCallback: function(row) {
-            row.show();
-        }
+        initStatusClass: 'treetable-expanded'
     }
 
 
