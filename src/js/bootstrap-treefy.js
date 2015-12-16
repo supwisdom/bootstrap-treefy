@@ -209,6 +209,14 @@
         })
     }
 
+    TreeFy.prototype.addIndent = function(depth, $row) {
+        $row.find('.treetable-indent').remove();
+        var expander = $row.find('.treetable-expander');
+        for (var i = 0; i < depth; i++) {
+            var indentTemplate = '<span class="treetable-indent"></span>';
+            $(indentTemplate).insertBefore(expander);
+        }
+    }
 
     // PLUGIN DEFINITION
     // =======================
@@ -218,28 +226,27 @@
         var ret;
         return this.each(function () {
             var $this = $(this)
-            var data  = $this.data('treeFy')
+            var data = $this.data('treeFy')
 
             if (!data) {
                 var options = $.extend(true, {}, $.fn.treeFy.defaults, typeof option == 'object' && option);
                 $this.data('treeFy', (data = new TreeFy(this, options)));
             }
-            if (typeof option == 'string') data[option].call($this)
-        })
 
-        if (typeof option == 'string') {
-            if (args.length == 1) {
-                var _ret = data[option].call(data);
-                if (typeof _ret != 'undefined') {
-                    ret = _ret;
-                }
-            } else {
-                var _ret = data[option].apply(data, Array.prototype.slice.call(args, 1));
-                if (typeof _ret != 'undefined') {
-                    ret = _ret;
+            if (typeof option == 'string') {
+                if (args.length == 1) {
+                    var _ret = data[option].call(data);
+                    if (typeof _ret != 'undefined') {
+                        ret = _ret;
+                    }
+                } else {
+                    var _ret = data[option].apply(data, Array.prototype.slice.call(args, 1));
+                    if (typeof _ret != 'undefined') {
+                        ret = _ret;
+                    }
                 }
             }
-        }
+        });
 
         if (typeof ret != 'undefined') {
             return ret;
@@ -264,6 +271,7 @@
         treeColumn: 0,
 
         initStatusClass: 'treetable-expanded'
+
     }
 
 
