@@ -224,7 +224,7 @@
     function Plugin(option) {
         var args = arguments;
         var ret;
-        return this.each(function () {
+        this.each(function () {
             var $this = $(this)
             var data = $this.data('treeFy')
 
