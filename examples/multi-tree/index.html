@@ -18,15 +18,15 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- fontawesome -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <!-- bootstrap-select -->
-  <link rel="stylesheet" href="http://silviomoreto.github.io/bootstrap-select/bootstrap-select.min.css">
-  <script src="http://silviomoreto.github.io/bootstrap-select/bootstrap-select.min.js"></script>
+  <link rel="stylesheet" href="https://silviomoreto.github.io/bootstrap-select/bootstrap-select.min.css">
+  <script src="https://silviomoreto.github.io/bootstrap-select/bootstrap-select.min.js"></script>
 
   <!-- bootstrap-treefy -->
   <link rel="stylesheet" href="../../dist/css/bootstrap-treefy.css">
@@ -99,81 +99,107 @@
     <div class="row">
         <div class="col-sm-12">
 
-            <table class="table" id="table">
+            <table class="table" id="table1">
     <thead>
     <tr>
         <th></th><th>Column A</th><th>Column B</th><th>Column C</th><th>Column D</th>
     </tr>
     </thead>
     <tbody>
-    <tr data-node="treetable-1">
+    <tr data-node="treetable-01" data-pnode="">
         <td><input type="checkbox" name="row.id"/></td>
-        <td>Node</td><td>1</td><td>c</td><td>info</td>
+        <td>Node</td><td>01</td><td>c</td><td>info</td>
     </tr>
-    <tr data-node="treetable-2" data-pnode="treetable-parent-1">
+    <tr data-node="treetable-01.01" data-pnode="treetable-parent-01">
         <td><input type="checkbox" name="row.id"/></td>
-        <td>Node</td> <td>1-1</td><td>c</td> <td>info</td>
+        <td>Node</td><td>01.01</td><td>c</td><td>info</td>
     </tr>
-    <tr data-node="treetable-3" data-pnode="treetable-parent-1">
+    <tr data-node="treetable-01.01.02" data-pnode="treetable-parent-01.01">
         <td><input type="checkbox" name="row.id"/></td>
-        <td>Node</td><td>1-2</td><td>c</td><td>info</td>
+        <td>Node</td><td>01.01.02</td><td>c</td><td>info</td>
     </tr>
-    <tr data-node="treetable-4" data-pnode="treetable-parent-3">
+    <tr data-node="treetable-01.01.03" data-pnode="treetable-parent-01.01">
         <td><input type="checkbox" name="row.id"/></td>
-        <td>Node</td><td>1-2-1</td><td>c</td><td>info</td>
+        <td>Node</td><td>01.01.03</td><td>c</td><td>info</td>
     </tr>
-    <tr data-node="treetable-5">
+    <tr data-node="treetable-01.01.04" data-pnode="treetable-parent-01.01">
         <td><input type="checkbox" name="row.id"/></td>
-        <td>Node</td><td>2</td><td>c</td><td>info</td>
+        <td>Node</td><td>01.01.04</td><td>c</td><td>info</td>
+    </tr>
+    <tr data-node="treetable-01.02" data-pnode="treetable-parent-01">
+        <td><input type="checkbox" name="row.id"/></td>
+        <td>Node</td><td>01.02</td><td>c</td><td>info</td>
+    </tr>
+    <tr data-node="treetable-01.02.01" data-pnode="treetable-parent-01.02">
+        <td><input type="checkbox" name="row.id"/></td>
+        <td>Node</td><td>01.02.01</td><td>c</td><td>info</td>
+    </tr>
+    <tr data-node="treetable-02">
+        <td><input type="checkbox" name="row.id"/></td>
+        <td>Node</td><td>02</td><td>c</td><td>info</td>
     </tr>
     </tbody>
 </table>
 
 <script>
     $(function() {
-        $("#table").treeFy({
+        $("#table1").treeFy({
             treeColumn: 1
         });
     });
 </script>
 
-            <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table"</span> <span class="na">id=</span><span class="s">"table"</span><span class="nt">&gt;</span>
+            <figure class="highlight"><pre><code class="language-html" data-lang="html">            <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table"</span> <span class="na">id=</span><span class="s">"table1"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;thead&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
         <span class="nt">&lt;th&gt;&lt;/th&gt;&lt;th&gt;</span>Column A<span class="nt">&lt;/th&gt;&lt;th&gt;</span>Column B<span class="nt">&lt;/th&gt;&lt;th&gt;</span>Column C<span class="nt">&lt;/th&gt;&lt;th&gt;</span>Column D<span class="nt">&lt;/th&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
     <span class="nt">&lt;/thead&gt;</span>
     <span class="nt">&lt;tbody&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-01"</span> <span class="na">data-pnode=</span><span class="s">""</span><span class="nt">&gt;</span>
         <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"row.id"</span><span class="nt">/&gt;&lt;/td&gt;</span>
-        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>01<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-2"</span> <span class="na">data-pnode=</span><span class="s">"treetable-parent-1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-01.01"</span> <span class="na">data-pnode=</span><span class="s">"treetable-parent-01"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"row.id"</span><span class="nt">/&gt;&lt;/td&gt;</span>
-        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;</span> <span class="nt">&lt;td&gt;</span>1-1<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;</span> <span class="nt">&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>01.01<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-3"</span> <span class="na">data-pnode=</span><span class="s">"treetable-parent-1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-01.01.02"</span> <span class="na">data-pnode=</span><span class="s">"treetable-parent-01.01"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"row.id"</span><span class="nt">/&gt;&lt;/td&gt;</span>
-        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>1-2<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>01.01.02<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-4"</span> <span class="na">data-pnode=</span><span class="s">"treetable-parent-3"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-01.01.03"</span> <span class="na">data-pnode=</span><span class="s">"treetable-parent-01.01"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"row.id"</span><span class="nt">/&gt;&lt;/td&gt;</span>
-        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>1-2-1<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>01.01.03<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-5"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-01.01.04"</span> <span class="na">data-pnode=</span><span class="s">"treetable-parent-01.01"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"row.id"</span><span class="nt">/&gt;&lt;/td&gt;</span>
-        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>01.01.04<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-01.02"</span> <span class="na">data-pnode=</span><span class="s">"treetable-parent-01"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"row.id"</span><span class="nt">/&gt;&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>01.02<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-01.02.01"</span> <span class="na">data-pnode=</span><span class="s">"treetable-parent-01.02"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"row.id"</span><span class="nt">/&gt;&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>01.02.01<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">data-node=</span><span class="s">"treetable-02"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"row.id"</span><span class="nt">/&gt;&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Node<span class="nt">&lt;/td&gt;&lt;td&gt;</span>02<span class="nt">&lt;/td&gt;&lt;td&gt;</span>c<span class="nt">&lt;/td&gt;&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
     <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s2">"#table"</span><span class="p">).</span><span class="nx">treeFy</span><span class="p">({</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#table1"</span><span class="p">).</span><span class="nx">treeFy</span><span class="p">({</span>
             <span class="na">treeColumn</span><span class="p">:</span> <span class="mi">1</span>
         <span class="p">});</span>
     <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span>
+
+            </code></pre></figure>
 
         </div>
 
