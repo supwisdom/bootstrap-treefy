@@ -144,7 +144,7 @@
 		
 	}
 	
-	TreeFy.VERSION = '0.0.1'
+	TreeFy.VERSION = '1.3.0'
 	
 	TreeFy.prototype.getAllNodes = function() {
 		var self = this;
